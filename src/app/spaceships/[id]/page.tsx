@@ -1,82 +1,70 @@
 "use client";
-import { useParams } from "next/navigation";
-import styles from "./page.module.css";
-import ships from "@/app/spaceships.json";
-import { useState, useEffect } from "react";
+
+import spaceships from "@/app/data/spaceships.json";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Spaceship {
-    id: number;
-    name: string;
-    model: string;
-    category: string;
-    description: string;
-    imageUrl: string;
-}
+import { useParams } from "next/navigation";
 
 export default function Page() {
-    const [spaceship, setSpaceship] = useState<Spaceship | null>(null);
-    const params = useParams();
-
-    useEffect(() => {
-        if (params?.id) {
-            const foundShip = ships.find(
-                (ship) => ship.id === Number(params.id)
-            );
-            if (foundShip) {
-                setSpaceship(foundShip);
-            } else {
-                console.error("Nave espacial não encontrada.");
-            }
-        }
-    }, [params]);
-
-    if (!spaceship) {
-        return <div>Carregando...</div>;
-    }
-
-    const currentIndex = ships.findIndex(
-        (ship) => ship.id === Number(params.id)
-    );
-    const nextIndex = (currentIndex + 1) % ships.length;
-    const nextShipId = ships[nextIndex].id;
-    const isFirstShip = currentIndex === 0;
-    const isLastShip = currentIndex === ships.length - 1;
-
+    const { id } = useParams();
+    if (!id) return null;
+    const ship = spaceships.find((ship) => ship.id === +id);
+    if (!ship) return null;
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>{spaceship.name}</h1>
-            <Image
-                src={spaceship.imageUrl}
-                alt={spaceship.name}
-                width={768}
-                height={432}
-            />
-            <p>{spaceship.category}</p>
-            <p>{spaceship.model}</p>
-            <p>{spaceship.description}</p>
+        <main>
+            <h1>{ship.name}</h1>
 
-            <div className={styles.wrapper}>
-                <Link
-                    href={
-                        isFirstShip
-                            ? "/spaceships"
-                            : `/spaceships/${ships[currentIndex - 1].id}`
-                    }
-                    className={`${styles.btn}`}
-                >
-                    {isFirstShip ? "Voltar para Espaçonaves" : "Voltar"}
+            <p>
+                <Image
+                    src={ship.imageUrl}
+                    alt={ship.name}
+                    width={768}
+                    height={432}
+                />
+            </p>
+
+            <p>
+                <strong>classe: </strong>
+                {ship.category}
+            </p>
+
+            <p>
+                <strong>Modelo: </strong>
+                {ship.model}
+            </p>
+
+            <p>{ship.description}</p>
+
+            <div
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginTop: "1rem",
+                }}
+            >
+                <Link className="btn" href={"/spaceships"}>
+                    Voltar para Espaçonaves
                 </Link>
+
                 <Link
-                    href={
-                        isLastShip ? "/spaceships" : `/spaceships/${nextShipId}`
-                    }
-                    className={`${styles.btn}`}
+                    className="btn"
+                    href={`/spaceships/${+id - 1}`}
+                    style={{ display: +id === 1 ? "none" : "block" }}
                 >
-                    {isLastShip ? "Voltar para Espaçonaves" : "Proximo"}
+                    Anterior
+                </Link>
+
+                <Link
+                    className="btn"
+                    href={`/spaceships/${+id + 1}`}
+                    style={{
+                        display: spaceships.length === +id ? "none" : "block",
+                    }}
+                >
+                    Próximo
                 </Link>
             </div>
-        </div>
+        </main>
     );
 }

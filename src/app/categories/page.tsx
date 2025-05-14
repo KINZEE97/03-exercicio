@@ -1,19 +1,25 @@
-import ships from "@/app/spaceships.json";
+import spaceships from "@/app/data/spaceships.json";
 import Link from "next/link";
-import styles from "./page.module.css";
 
 export default function Page() {
+    const setCategories = new Set(spaceships.map((ship) => ship.category));
+    const categoriesArray = Array.from(setCategories);
     return (
-        <div className={styles.container}>
+        <main>
             <h1>Categorias</h1>
 
-            <div className={styles.shipCategory}>
-                {ships.map((ship) => (
-                    <Link key={ship.id} href={""} className={styles.ship}>
-                        {ship.category}
-                    </Link>
+            <ul>
+                {categoriesArray.map((category) => (
+                    <li key={category}>
+                        <Link
+                            href={`/categories/${category.replace(" ", "_")}`}
+                            className="btn"
+                        >
+                            {category}
+                        </Link>
+                    </li>
                 ))}
-            </div>
-        </div>
+            </ul>
+        </main>
     );
 }

@@ -15,14 +15,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <nav className="navbar">
-                    <p>EXERCICIO 3 - CATÁLOGO DE ESPAÇONAVES</p>
-                    <div className="links">
-                        <Link href="/">Inicio</Link>
-                        <Link href="/spaceships">Espaçonaves</Link>
-                        <Link href="/categories">Categorias</Link>
-                    </div>
-                </nav>
+                <header>
+                    <div>Exercicio 3 - Catálogo de Espaçonaves</div>
+                    <nav>
+                        <Link href={"/"}>Inicio</Link>
+                        <Link href={"/spaceships"}>Espaçonaves</Link>
+                        <Link href={"/categories"}>Categorias</Link>
+                    </nav>
+                </header>
                 {children}
             </body>
         </html>

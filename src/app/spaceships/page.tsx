@@ -1,22 +1,19 @@
-import ships from "@/app/spaceships.json";
+import spaceships from "@/app/data/spaceships.json";
 import Link from "next/link";
-import styles from "./page.module.css";
 
 export default function Page() {
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>Todas as Espaçonaves</h1>
-            <div className={styles.spaceships}>
-                {ships.map((ship) => (
-                    <Link
-                        key={ship.id}
-                        href={`/spaceships/${String(ship.id)}`}
-                        className={styles.ships}
-                    >
-                        {ship.name}
-                    </Link>
+        <main>
+            <h1>Todas as Espaçonaves</h1>
+            <ul>
+                {spaceships.map((ship) => (
+                    <li key={ship.id}>
+                        <Link className="btn" href={`/spaceships/${ship.id}`}>
+                            {ship.name}
+                        </Link>
+                    </li>
                 ))}
-            </div>
-        </div>
+            </ul>
+        </main>
     );
 }
