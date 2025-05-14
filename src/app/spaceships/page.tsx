@@ -8,7 +8,11 @@ export default function Page() {
             <h1 className={styles.title}>Todas as Espaçonaves</h1>
             <div className={styles.spaceships}>
                 {ships.map((ship) => (
-                    <Link key={ship.id} href="#" className={styles.ships}>
+                    <Link
+                        key={ship.id}
+                        href={`/spaceships/${String(ship.id)}`}
+                        className={styles.ships}
+                    >
                         {ship.name}
                     </Link>
                 ))}
