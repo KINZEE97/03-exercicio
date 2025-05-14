@@ -1,8 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spaceship Project with Next.js
 
-## Getting Started
+This is a project developed with [Next.js](https://nextjs.org), created using the [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) command. The goal of this project is to present a web application that displays information about spaceships, using modern technologies and development best practices.
 
-First, run the development server:
+## Technologies Used
+
+-   **Next.js**: React framework for developing modern and optimized web applications.
+-   **TypeScript**: A superset of JavaScript that adds static typing to the code, increasing safety and productivity.
+-   **CSS Modules**: For modular styling and local scope, ensuring styles do not conflict with each other.
+-   **JSON**: Used to store spaceship data in a simple and efficient way.
+
+## Project Structure
+
+The project structure was organized to facilitate scalability and maintenance:
+
+-   `src/app`: Contains the main application files, such as layout, global styles, and pages.
+-   `src/app/categories/[category]`: Dynamic page to display spaceships by category.
+-   `src/app/spaceships/[id]`: Dynamic page to display details of a specific spaceship.
+-   `public/images`: Contains images of the spaceships used in the application.
+-   `src/data/spaceships.json`: JSON file with spaceship data.
+
+## Best Practices Applied
+
+-   **Componentization**: The project uses reusable components to avoid code duplication and facilitate maintenance.
+-   **Dynamic Routes**: Implementation of dynamic routes to display categories and spaceship details.
+-   **Font Optimization**: Use of [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to optimize font loading.
+-   **Optimized Images**: Use of Next.js image optimization system to improve performance.
+-   **Static Typing**: Use of TypeScript to avoid common errors and improve code readability.
+
+## How to Run the Project
+
+To run the development server, use one of the commands below:
 
 ```bash
 npm run dev
@@ -14,23 +41,19 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js, check out the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+-   [Interactive Next.js Tutorial](https://nextjs.org/learn) - An interactive tutorial to learn Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can also visit the [Next.js GitHub repository](https://github.com/vercel/next.js) to contribute or provide feedback.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js application is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), created by the developers of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
