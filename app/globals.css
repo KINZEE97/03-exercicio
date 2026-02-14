@@ -75,3 +75,7 @@ body {
 h1 {
     color: #f2e251;
 }
+
+p {
+    margin-bottom: 1rem;
+}

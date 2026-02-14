@@ -1,0 +1,35 @@
+.backSpaceships {
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5rem 0 1rem;
+
+    & div {
+        display: flex;
+        gap: 1rem;
+
+        & .btn {
+            color: white;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            padding: 0.5rem 2rem;
+            text-decoration: none;
+        }
+    }
+}
+
+.eneble {
+    display: block;
+}
+
+.desabled {
+    display: none;
+}

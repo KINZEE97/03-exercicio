@@ -15,4 +15,10 @@
     border: 1px solid white;
     padding: 1rem;
     border-radius: 0.5rem;
+    transition: 0.2s ease-in-out;
+}
+
+.shipsBtn:hover {
+    color: rgb(164, 164, 164);
+    border-color: rgb(164, 164, 164);
 }
