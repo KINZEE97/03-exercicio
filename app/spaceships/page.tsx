@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Spaceships() {
     return (
         <>
-            <h1 className={styles.title}>Todas as Espaçonaves</h1>
+            <h1>Todas as Espaçonaves</h1>
             <div className={styles.spaceshipsBtn}>
                 {spaceships.map((ship) => (
                     <Link

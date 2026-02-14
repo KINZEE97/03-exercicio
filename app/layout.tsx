@@ -30,7 +30,7 @@ export default function RootLayout({
                             <Link href={"/"}>Início</Link> {" | "}
                             <Link href={"/spaceships"}>Espaçonaves</Link>{" "}
                             {" | "}
-                            <Link href={"/category"}>Categorias</Link>
+                            <Link href={"/categories"}>Categorias</Link>
                         </nav>
                     </header>
                     {children}
