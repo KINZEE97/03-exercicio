@@ -1,3 +1,23 @@
 .page {
     font-family: var(--font-roboto);
+    height: 100%;
+
+    & h1 {
+        color: #f2e251;
+        margin-bottom: 2rem;
+    }
+
+    & a {
+        color: white;
+        text-decoration: none;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        padding: 0.7rem 4rem;
+        transition: 0.2s ease-in-out;
+    }
+
+    & a:hover {
+        color: #f2e251;
+        border-color: #f2e251;
+    }
 }
