@@ -1,0 +1,18 @@
+.title {
+    color: #f2e251;
+    margin-bottom: 2rem;
+}
+
+.spaceshipsBtn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.shipsBtn {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
