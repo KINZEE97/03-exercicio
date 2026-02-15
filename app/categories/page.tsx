@@ -13,7 +13,7 @@ export default function Categories() {
                 {categories.map((category) => (
                     <Link
                         key={category}
-                        href={`/categories/${category.replace(" ", "_").toLocaleLowerCase()}`}
+                        href={`/categories/${category.replace(" ", "_")}`}
                         className={styles.categoryBtn}
                     >
                         {category}

@@ -35,7 +35,6 @@ body {
 }
 
 .container {
-    border: 1px solid white;
     width: 60vw;
     height: 100vh;
     margin: auto;
