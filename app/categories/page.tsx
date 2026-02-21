@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
-import spaceships from "@/database/spaceships.json";
+import spaceships from "../../database/spaceships.json";
 
 export default function Categories() {
     const filtered = new Set(spaceships.map((ship) => ship.category));
