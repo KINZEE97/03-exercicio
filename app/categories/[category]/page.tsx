@@ -11,7 +11,7 @@ export default function Category() {
     if (typeof params.category !== "string") return null;
 
     const category = params.category.replace("_", " ");
-    const spaceshipCategory = spaceships.filter(
+    const spaceshipCategory = spaceships!.filter(
         (ship) => ship.category === category,
     );
 
