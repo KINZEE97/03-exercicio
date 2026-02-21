@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import spaceships from "@/database/spaceships.json";
+import spaceships from "../../../database/spaceships.json";
 import styles from "./styles.module.css";
 import Link from "next/link";
 
